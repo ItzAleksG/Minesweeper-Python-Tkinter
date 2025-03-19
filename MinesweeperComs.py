@@ -123,7 +123,7 @@ class Minesweeper():
         
         self.boardFrame = tk.Frame(self.root, padx=15, pady=15, bg=COLORS['background']) # Creating a field area
         self.boardFrame.grid(column=0, row=1) # Placing the field area in the interface
-        self.mineCounter.config(text=f'{ELEMENTS['flags']}{"0"*(3-len(str(self.mines)))}{self.mines}') # Displaying the number of mines on the panel
+        self.mineCounter.config(text=f'{ELEMENTS["flags"]}{"0"*(3-len(str(self.mines)))}{self.mines}') # Displaying the number of mines on the panel
         
         self.boardBtns = [[tk.Button(self.boardFrame) for x in range(self.width)] for y in range(self.height)] # Creating a field as a list of lists
         for y in range(self.height): # Searching all rows in the created field
@@ -191,7 +191,7 @@ class Minesweeper():
         elif (x, y) not in self.opened and self.boardBtns[y][x]['state'] != tk.DISABLED: # Checking if the cell is closed and on
             self.withflag.remove((x, y)) # Removing a cell from the list of flagged cells
             self.boardBtns[y][x].config(text='') # Removing a flag from a cell
-        self.mineCounter.config(text=f'{ELEMENTS['flags']}{"0"*(3-len(str(self.mines-len(self.withflag))))}{self.mines-len(self.withflag)}') # Changing the flag counter
+        self.mineCounter.config(text=f'{ELEMENTS["flags"]}{"0"*(3-len(str(self.mines-len(self.withflag))))}{self.mines-len(self.withflag)}') # Changing the flag counter
     
     def end(self, win: bool):
         ''' End game '''
