@@ -114,7 +114,7 @@ class Minesweeper():
         
         self.boardFrame = tk.Frame(self.root, padx=15, pady=15, bg=COLORS['background'])
         self.boardFrame.grid(column=0, row=1)
-        self.mineCounter.config(text=f'{ELEMENTS['flags']}{"0"*(3-len(str(self.mines)))}{self.mines}')
+        self.mineCounter.config(text=f'{ELEMENTS["flags"]}{"0"*(3-len(str(self.mines)))}{self.mines}')
         
         self.boardBtns = [[tk.Button(self.boardFrame, fg=COLORS['flag'],bg=COLORS['closed'][(x+y)%2], cursor='hand2', height=2, width=4) for x in range(self.width)] for y in range(self.height)]
         for y in range(self.height):
@@ -178,7 +178,7 @@ class Minesweeper():
         elif (x, y) not in self.opened and self.boardBtns[y][x]['state'] != tk.DISABLED:
             self.withflag.remove((x, y))
             self.boardBtns[y][x].config(text='')
-        self.mineCounter.config(text=f'{ELEMENTS['flags']}{"0"*(3-len(str(self.mines-len(self.withflag))))}{self.mines-len(self.withflag)}')
+        self.mineCounter.config(text=f'{ELEMENTS["flags"]}{"0"*(3-len(str(self.mines-len(self.withflag))))}{self.mines-len(self.withflag)}')
     
     def end(self, win: bool):
         self.timerOff = True
