@@ -123,7 +123,7 @@ class Minesweeper():
         
         self.boardFrame = tk.Frame(self.root, padx=15, pady=15, bg=COLORS['background']) # Создание области под поле
         self.boardFrame.grid(column=0, row=1) # Размещение области поля в интерфесйсе
-        self.mineCounter.config(text=f'{ELEMENTS['flags']}{"0"*(3-len(str(self.mines)))}{self.mines}') # Вывод количевства мин на панель
+        self.mineCounter.config(text=f'{ELEMENTS["flags"]}{"0"*(3-len(str(self.mines)))}{self.mines}') # Вывод количевства мин на панель
         
         self.boardBtns = [[tk.Button(self.boardFrame) for x in range(self.width)] for y in range(self.height)] # Создание поля в виде списка списков
         for y in range(self.height): # Перебор всех строк в созданном поле
@@ -191,7 +191,7 @@ class Minesweeper():
         elif (x, y) not in self.opened and self.boardBtns[y][x]['state'] != tk.DISABLED: # Проверка на то закрыта и включена ли клетка
             self.withflag.remove((x, y)) # Уборка клетки из списка клеток с флагом
             self.boardBtns[y][x].config(text='') # Уборка флага с клетки
-        self.mineCounter.config(text=f'{ELEMENTS['flags']}{"0"*(3-len(str(self.mines-len(self.withflag))))}{self.mines-len(self.withflag)}') # Измененение счётчика флагов
+        self.mineCounter.config(text=f'{ELEMENTS["flags"]}{"0"*(3-len(str(self.mines-len(self.withflag))))}{self.mines-len(self.withflag)}') # Измененение счётчика флагов
     
     def end(self, win: bool):
         ''' Концовка игра '''
